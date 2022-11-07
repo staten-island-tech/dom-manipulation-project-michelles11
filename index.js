@@ -11,4 +11,21 @@ function backgroundAndText(background, text) {
   text.style.fontSize = "40px";
 }
 
-backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+DOMSelectors.button.addEventListener("click", function () {
+  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+});
+DOMSelectors.button.addEventListener("click", function () {
+  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+});
+DOMSelectors.button.addEventListener("click", function () {
+  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+});
+
+function changeLi() {
+  DOMSelectors.points.forEach((point) => {
+    point.addEventListener("click", function () {
+      point.textContent;
+    });
+  });
+}
+changeLi();
