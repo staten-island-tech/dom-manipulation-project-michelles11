@@ -24,7 +24,7 @@ DOMSelectors.button.addEventListener("click", function () {
 function changeLi() {
   DOMSelectors.points.forEach((point) => {
     point.addEventListener("click", function () {
-      point.textContent;
+      point.textContent("Hello");
     });
   });
 }
