@@ -13,15 +13,25 @@ DOM manipulation. The project must contain the following
 
 const DOMSelectors = {
   submit: document.querySelector("#form"), // getElementById looks for the id that is passed through it, in this case being "btn"
-  text: document.querySelector(".text-box"), // queryselectors look for elements based on parameters, being '.' or '#'
-  box: document.getElementById("big-black-box"),
+  text: document.querySelector("#title"), // album
+
+  artist: document.querySelector("#Artist"), //artist
+
   points: document.querySelectorAll(".point"), // querySelectorAll will access multiple elements with the same class, in this case being "point"
 };
 
 DOMSelectors.submit.addEventListener("submit", function (e) {
   e.preventDefault();
-  let text = DOMSelectors.text.value;
-  console.log();
-  let.e = {};
+  let title = DOMSelectors.text.value;
+
+  let Album = {};
+  Album.title = title;
+  console.log(Album);
+
+  let artist = DOMSelectors.artist.value;
+  let Artist = {};
+  person.Artist = Artist;
+  console.log(person);
 });
+
 document.getElementById(`title`);
