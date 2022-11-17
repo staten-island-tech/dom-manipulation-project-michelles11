@@ -1,8 +1,9 @@
-#big-black-box {
-  background-color: black;
-
-  font-size: 2vh;
-  color: cornsilk;
-  height: 100vh;
+.song-card {
+  width: 500px;
+  padding: 10px;
+  margin: 10px auto;
   text-align: center;
+  background-color: rgb(0, 204, 204);
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif;
 }
