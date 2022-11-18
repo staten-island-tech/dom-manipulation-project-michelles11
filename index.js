@@ -30,19 +30,24 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   Album.title = title;
   console.log(Album);
 
-  let Artist = DOMSelectors.artist.value;
-  let person = {};
-  person.Artist = Artist;
-  console.log(person);
+  Album.Artist = DOMSelectors.artist.value;
 
-  let image = DOMSelectors.imageurl.value;
-  let URL = {};
-  URL.image = image;
-  console.log(URL);
+  Album.image = DOMSelectors.imageurl.value;
 
   DOMSelectors.text.value = "";
   DOMSelectors.artist.value = "";
   DOMSelectors.imageurl.value = "";
+  makeCard(Album);
 });
+document.getElementById("text");
 
-DOMSelectors.song.insertAdjacentHTML("beforebegin", "<h1>We are an H1</h1>");
+function makeCard(Album) {
+  DOMSelectors.submit.insertAdjacentHTML(
+    "afterend",
+    `<div class="song-card">
+      <H2>${Album.title}</H2>
+    <img src="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="penguin">
+    <h3>${Album.title}</h3>
+</div>`
+  );
+}
