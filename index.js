@@ -13,7 +13,9 @@ DOM manipulation. The project must contain the following
 
 const DOMSelectors = {
   song: document.getElementById("song-card"),
+
   submit: document.querySelector("#form"), // getElementById looks for the id that is passed through it, in this case being "btn"
+  remove: document.querySelectorAll("#form"),
   text: document.querySelector("#title"), // album
 
   artist: document.querySelector("#Artist"), //artist
@@ -28,11 +30,12 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   let title = DOMSelectors.text.value;
   let Album = {};
   Album.title = title;
-  console.log(Album);
 
   Album.Artist = DOMSelectors.artist.value;
 
   Album.image = DOMSelectors.imageurl.value;
+
+  console.log(Album);
 
   DOMSelectors.text.value = "";
   DOMSelectors.artist.value = "";
@@ -46,8 +49,8 @@ function makeCard(Album) {
     "afterend",
     `<div class="song-card">
       <H2>${Album.title}</H2>
-    <img src="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="penguin">
-    <h3>${Album.title}</h3>
+    <img class ="image" src=${Album.image} alt="">
+    <h3>${Album.Artist}</h3>
 </div>`
   );
 }
