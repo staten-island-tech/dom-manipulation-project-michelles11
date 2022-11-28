@@ -41,8 +41,25 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   DOMSelectors.artist.value = "";
   DOMSelectors.imageurl.value = "";
   makeCard(Album);
+  console.log(document.getElementById("song-card"));
 });
-document.getElementById("text");
+DOMSelectors.submit.addEventListener("remove", function (e) {
+  e.preventDefault();
+  let title = DOMSelectors.text.value;
+  let Album = {};
+  Album.title = title;
+
+  Album.Artist = DOMSelectors.artist.value;
+
+  Album.image = DOMSelectors.imageurl.value;
+
+  console.log(Album);
+
+  DOMSelectors.text.value = "";
+  DOMSelectors.artist.value = "";
+  DOMSelectors.imageurl.value = "";
+  removeCard(Album);
+});
 
 function makeCard(Album) {
   DOMSelectors.submit.insertAdjacentHTML(
@@ -53,4 +70,8 @@ function makeCard(Album) {
     <h3>${Album.Artist}</h3>
 </div>`
   );
+}
+function removeCard(Album) {
+  document.getElementById("afterend");
+  Element.remove();
 }
