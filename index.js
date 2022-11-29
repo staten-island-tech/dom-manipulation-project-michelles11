@@ -43,23 +43,6 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   makeCard(Album);
   console.log(document.getElementById("song-card"));
 });
-DOMSelectors.submit.addEventListener("remove", function (e) {
-  e.preventDefault();
-  let title = DOMSelectors.text.value;
-  let Album = {};
-  Album.title = title;
-
-  Album.Artist = DOMSelectors.artist.value;
-
-  Album.image = DOMSelectors.imageurl.value;
-
-  console.log(Album);
-
-  DOMSelectors.text.value = "";
-  DOMSelectors.artist.value = "";
-  DOMSelectors.imageurl.value = "";
-  removeCard(Album);
-});
 
 function makeCard(Album) {
   DOMSelectors.submit.insertAdjacentHTML(
@@ -71,7 +54,10 @@ function makeCard(Album) {
 </div>`
   );
 }
-function removeCard(Album) {
-  document.getElementById("afterend");
-  Element.remove();
-}
+
+let removeButton = document.querySelectorAll(".remove");
+removeButton.forEach((button) => {
+  button.addEventListener("click", function (event) {
+    console.log(event.target.parentElement.remove(Album));
+  });
+});
