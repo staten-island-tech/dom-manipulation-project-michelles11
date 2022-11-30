@@ -15,7 +15,7 @@ const DOMSelectors = {
   song: document.getElementById("song-card"),
 
   submit: document.querySelector("#form"), // getElementById looks for the id that is passed through it, in this case being "btn"
-  remove: document.querySelectorAll("#form"),
+  remove: document.querySelectorAll("#remove"),
   text: document.querySelector("#title"), // album
 
   artist: document.querySelector("#Artist"), //artist
@@ -35,29 +35,45 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
 
   Album.image = DOMSelectors.imageurl.value;
 
-  console.log(Album);
-
   DOMSelectors.text.value = "";
   DOMSelectors.artist.value = "";
   DOMSelectors.imageurl.value = "";
+
+  console.log(Album);
   makeCard(Album);
-  console.log(document.getElementById("song-card"));
+  deleteCard();
 });
+document.getElementById("text");
 
 function makeCard(Album) {
   DOMSelectors.submit.insertAdjacentHTML(
     "afterend",
     `<div class="song-card">
-      <H2>${Album.title}</H2>
+      <H2>text ${Album.title}</H2>
     <img class ="image" src=${Album.image} alt="">
-    <h3>${Album.Artist}</h3>
+    <h3>artist ${Album.Artist}</h3>
+
+<button class="button2">remove</button>
 </div>`
   );
 }
 
-let removeButton = document.querySelectorAll(".remove");
+/* /* let removeButton = document.querySelectorAll(".remove");
 removeButton.forEach((button) => {
   button.addEventListener("click", function (event) {
-    console.log(event.target.parentElement.remove(Album));
+    console.log(event.target.parentElement.remove());
   });
-});
+}); */
+
+/* DOMSelectors.button2.addEventListener("click", function (clear) {
+  submit.remove();
+}); */
+
+function deleteCard() {
+  const remove = document.querySelectorAll(".button2");
+  remove.forEach((R) => {
+    R.addEventListener("click", (e) => {
+      e.target.parentElement.remove();
+    });
+  });
+}
