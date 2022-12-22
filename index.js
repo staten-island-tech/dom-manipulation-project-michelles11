@@ -32,17 +32,20 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   Album.title = title;
 
   Album.Artist = DOMSelectors.artist.value;
-
   Album.image = DOMSelectors.imageurl.value;
-
-  DOMSelectors.text.value = "";
-  DOMSelectors.artist.value = "";
-  DOMSelectors.imageurl.value = "";
 
   console.log(Album);
   makeCard(Album);
   deleteCard();
+  clearField();
 });
+
+function clearField() {
+  DOMSelectors.text.value = "";
+  DOMSelectors.artist.value = "";
+  DOMSelectors.imageurl.value = "";
+}
+
 document.getElementById("text");
 
 function makeCard(Album) {
