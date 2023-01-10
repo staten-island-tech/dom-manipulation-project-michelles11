@@ -27,9 +27,9 @@ const DOMSelectors = {
 
 DOMSelectors.submit.addEventListener("submit", function (e) {
   e.preventDefault();
-  let title = DOMSelectors.text.value;
+
   let Album = {};
-  Album.title = title;
+  Album.title = DOMSelectors.text.value;
 
   Album.Artist = DOMSelectors.artist.value;
   Album.image = DOMSelectors.imageurl.value;
@@ -52,25 +52,14 @@ function makeCard(Album) {
   DOMSelectors.submit.insertAdjacentHTML(
     "afterend",
     `<div class="song-card">
-      <H2>text ${Album.title}</H2>
+      <H2>${Album.title}</H2>
     <img class ="image" src=${Album.image} alt="">
-    <h3>artist ${Album.Artist}</h3>
+    <h3>${Album.Artist}</h3>
 
 <button class="button2">remove</button>
 </div>`
   );
 }
-
-/* /* let removeButton = document.querySelectorAll(".remove");
-removeButton.forEach((button) => {
-  button.addEventListener("click", function (event) {
-    console.log(event.target.parentElement.remove());
-  });
-}); */
-
-/* DOMSelectors.button2.addEventListener("click", function (clear) {
-  submit.remove();
-}); */
 
 function deleteCard() {
   const remove = document.querySelectorAll(".button2");
